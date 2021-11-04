@@ -320,7 +320,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           }
           return Scaffold(
             appBar: AppBar(
-              title: Text('Error'),
+              title: Text('Loading'),
             ),
             body: Center(
               child: CircularProgressIndicator(),

@@ -282,7 +282,7 @@ class _LoginScreenState extends State<LoginScreen> {
           }
           return Scaffold(
             appBar: AppBar(
-              title: Text('Error'),
+              title: Text('Loading'),
             ),
             body: Center(
               child: CircularProgressIndicator(),

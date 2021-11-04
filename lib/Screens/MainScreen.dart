@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
           if (!snap.hasData)
             return Scaffold(
                 appBar: AppBar(
-                  title: Text('Test Firebase'),
+                  title: Text('Firebase not connected !'),
                 ),
                 body: Center(
                   child: CircularProgressIndicator(),
@@ -37,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
           // return Text(snap.data!.snapshot.value["LED Status"].toString());
           return Scaffold(
             appBar: AppBar(
-              title: Text('Test Firebase'),
+              title: Text('Smart Home Application'),
             ),
             body: Center(
               child: Column(
