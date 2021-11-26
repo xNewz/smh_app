@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:smh_app/Screens/MainScreen.dart';
+// import 'package:smh_app/Screens/MainScreen2.dart';
 import 'package:smh_app/Screens/LoginScreen.dart';
 
 void main() {

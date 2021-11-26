@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:smh_app/Screens/MainScreen.dart';
+import 'package:smh_app/Screens/MainScreen2.dart';
 import 'package:smh_app/Screens/Profile.dart';
 import 'package:smh_app/Screens/RegisterScreen.dart';
 
