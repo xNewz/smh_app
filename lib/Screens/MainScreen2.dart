@@ -15,11 +15,12 @@ class _MainScreenState extends State<MainScreen> {
   bool isSwitched_2 = false;
   bool isSwitched_3 = false;
   bool isSwitched_4 = false;
+  bool isSwitched_5 = false;
   var cardTextStyle = TextStyle(fontFamily: "Prompt", fontSize: 16);
   final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) => StreamBuilder(
-        stream: databaseReference.child("Bed Room").onValue,
+        stream: databaseReference.child("LED Status").onValue,
         builder: (context, AsyncSnapshot<Event> snap) {
           if (!snap.hasData)
             return Scaffold(
@@ -30,39 +31,48 @@ class _MainScreenState extends State<MainScreen> {
                   child: CircularProgressIndicator(),
                 ));
           // Check Status (Firebase) LED 1
-          if (snap.data!.snapshot.value["LED1"] == 1) {
+          if (snap.data!.snapshot.value["bed_room"] == 1) {
             isSwitched_1 = true;
-            print('LED1 = $isSwitched_1');
+            print('Bed Room = $isSwitched_1');
           } else {
             isSwitched_1 = false;
-            print('LED1 = $isSwitched_1');
+            print('Bed Room = $isSwitched_1');
           }
 
           // Check Status (Firebase) LED 2
-          if (snap.data!.snapshot.value["LED2"] == 1) {
+          if (snap.data!.snapshot.value["bathroom"] == 1) {
             isSwitched_2 = true;
-            print('LED2 = $isSwitched_2');
+            print('Bathroom = $isSwitched_2');
           } else {
             isSwitched_2 = false;
-            print('LED2 = $isSwitched_2');
+            print('Bathroom = $isSwitched_2');
           }
 
           // Check Status (Firebase) LED 3
-          if (snap.data!.snapshot.value["LED3"] == 1) {
+          if (snap.data!.snapshot.value["kitchen"] == 1) {
             isSwitched_3 = true;
-            print('LED3 = $isSwitched_3');
+            print('Kitchen = $isSwitched_3');
           } else {
             isSwitched_3 = false;
-            print('LED3 = $isSwitched_3');
+            print('Kitchen = $isSwitched_3');
           }
 
           // Check Status (Firebase) LED 4
-          if (snap.data!.snapshot.value["LED4"] == 1) {
+          if (snap.data!.snapshot.value["living_room"] == 1) {
             isSwitched_4 = true;
-            print('LED4 = $isSwitched_4');
+            print('Living Room = $isSwitched_4');
           } else {
             isSwitched_4 = false;
-            print('LED4 = $isSwitched_4');
+            print('Living Room = $isSwitched_4');
+          }
+
+          // Check Status (Firebase) LED 5
+          if (snap.data!.snapshot.value["front_light"] == 1) {
+            isSwitched_5 = true;
+            print('Front Light = $isSwitched_5');
+          } else {
+            isSwitched_5 = false;
+            print('Front Light = $isSwitched_5');
           }
           // return Text(snap.data!.snapshot.value["LED Status"].toString());
           return Scaffold(
@@ -141,11 +151,11 @@ class _MainScreenState extends State<MainScreen> {
                           child: ListTile(
                             leading: Image.asset('assets/images/lamp.png'),
                             title: Text(
-                              'LED1',
+                              'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('LED Bed Room'),
+                            subtitle: Text('ห้องนอน'),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -155,15 +165,15 @@ class _MainScreenState extends State<MainScreen> {
                                       isSwitched_1 = value;
                                       if (isSwitched_1 == true) {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED1': 1,
+                                          'bed_room': 1,
                                         });
                                       } else {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED1': 0,
+                                          'bed_room': 0,
                                         });
                                       }
                                     });
@@ -188,11 +198,11 @@ class _MainScreenState extends State<MainScreen> {
                           child: ListTile(
                             leading: Image.asset('assets/images/lamp.png'),
                             title: Text(
-                              'LED2',
+                              'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('LED Bed Room'),
+                            subtitle: Text('ห้องน้ำ'),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -202,15 +212,15 @@ class _MainScreenState extends State<MainScreen> {
                                       isSwitched_2 = value;
                                       if (isSwitched_2 == true) {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED2': 1,
+                                          'bathroom': 1,
                                         });
                                       } else {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED2': 0,
+                                          'bathroom': 0,
                                         });
                                       }
                                     });
@@ -235,11 +245,11 @@ class _MainScreenState extends State<MainScreen> {
                           child: ListTile(
                             leading: Image.asset('assets/images/lamp.png'),
                             title: Text(
-                              'LED3',
+                              'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('LED Bed Room'),
+                            subtitle: Text('ห้องครัว'),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -249,15 +259,15 @@ class _MainScreenState extends State<MainScreen> {
                                       isSwitched_3 = value;
                                       if (isSwitched_3 == true) {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED3': 1,
+                                          'kitchen': 1,
                                         });
                                       } else {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED3': 0,
+                                          'kitchen': 0,
                                         });
                                       }
                                     });
@@ -282,11 +292,11 @@ class _MainScreenState extends State<MainScreen> {
                           child: ListTile(
                             leading: Image.asset('assets/images/lamp.png'),
                             title: Text(
-                              'LED4',
+                              'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('LED Bed Room'),
+                            subtitle: Text('ห้องรับแขก'),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -296,15 +306,62 @@ class _MainScreenState extends State<MainScreen> {
                                       isSwitched_4 = value;
                                       if (isSwitched_4 == true) {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED4': 1,
+                                          'living_room': 1,
                                         });
                                       } else {
                                         databaseReference
-                                            .child('Bed Room')
+                                            .child('LED Status')
                                             .update({
-                                          'LED4': 0,
+                                          'living_room': 0,
+                                        });
+                                      }
+                                    });
+                                  },
+                                )),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          height: 70,
+                          width: 390,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black54,
+                                    offset: Offset(3, 5),
+                                    blurRadius: 9,
+                                    spreadRadius: 1)
+                              ]),
+                          child: ListTile(
+                            leading: Image.asset('assets/images/lamp.png'),
+                            title: Text(
+                              'หลอดไฟ',
+                              style:
+                                  TextStyle(fontSize: 15, fontFamily: "Prompt"),
+                            ),
+                            subtitle: Text('หน้าบ้าน'),
+                            trailing: Transform.scale(
+                                scale: 1,
+                                child: CupertinoSwitch(
+                                  value: isSwitched_5,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      isSwitched_5 = value;
+                                      if (isSwitched_5 == true) {
+                                        databaseReference
+                                            .child('LED Status')
+                                            .update({
+                                          'front_light': 1,
+                                        });
+                                      } else {
+                                        databaseReference
+                                            .child('LED Status')
+                                            .update({
+                                          'front_light': 0,
                                         });
                                       }
                                     });
