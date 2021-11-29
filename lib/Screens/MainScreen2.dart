@@ -149,13 +149,15 @@ class _MainScreenState extends State<MainScreen> {
                                     spreadRadius: 1)
                               ]),
                           child: ListTile(
-                            leading: Image.asset('assets/images/lamp.png'),
+                            leading: Image.asset('assets/images/bed.png'),
                             title: Text(
                               'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('ห้องนอน'),
+                            subtitle: Text('ห้องนอน',
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: "Prompt")),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -196,13 +198,15 @@ class _MainScreenState extends State<MainScreen> {
                                     spreadRadius: 1)
                               ]),
                           child: ListTile(
-                            leading: Image.asset('assets/images/lamp.png'),
+                            leading: Image.asset('assets/images/bath.png'),
                             title: Text(
                               'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('ห้องน้ำ'),
+                            subtitle: Text('ห้องน้ำ',
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: "Prompt")),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -243,13 +247,15 @@ class _MainScreenState extends State<MainScreen> {
                                     spreadRadius: 1)
                               ]),
                           child: ListTile(
-                            leading: Image.asset('assets/images/lamp.png'),
+                            leading: Image.asset('assets/images/kitchen.png'),
                             title: Text(
                               'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('ห้องครัว'),
+                            subtitle: Text('ห้องครัว',
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: "Prompt")),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -290,13 +296,15 @@ class _MainScreenState extends State<MainScreen> {
                                     spreadRadius: 1)
                               ]),
                           child: ListTile(
-                            leading: Image.asset('assets/images/lamp.png'),
+                            leading: Image.asset('assets/images/back.png'),
                             title: Text(
                               'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('ห้องรับแขก'),
+                            subtitle: Text('ห้องรับแขก',
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: "Prompt")),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
@@ -337,13 +345,15 @@ class _MainScreenState extends State<MainScreen> {
                                     spreadRadius: 1)
                               ]),
                           child: ListTile(
-                            leading: Image.asset('assets/images/lamp.png'),
+                            leading: Image.asset('assets/images/garden.png'),
                             title: Text(
                               'หลอดไฟ',
                               style:
                                   TextStyle(fontSize: 15, fontFamily: "Prompt"),
                             ),
-                            subtitle: Text('หน้าบ้าน'),
+                            subtitle: Text('หน้าบ้าน',
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: "Prompt")),
                             trailing: Transform.scale(
                                 scale: 1,
                                 child: CupertinoSwitch(
